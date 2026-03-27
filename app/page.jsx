@@ -32,7 +32,8 @@ import {
     Users,
     ArrowRight,
     Menu as MenuIcon,
-    X
+    X,
+    Calculator
 } from 'lucide-react';
 
 const loanProducts = [
@@ -350,6 +351,97 @@ export default function Home() {
                             </Grid>
                         ))}
                     </Grid>
+                </Container>
+            </Box>
+
+            {/* EMI Calculator CTA */}
+            <Box sx={{ py: 10, bgcolor: 'secondary.light', position: 'relative', overflow: 'hidden' }}>
+                <Box sx={{
+                    position: 'absolute',
+                    top: -100,
+                    right: -100,
+                    width: 300,
+                    height: 300,
+                    bgcolor: 'primary.main',
+                    borderRadius: '50%',
+                    opacity: 0.1,
+                    filter: 'blur(80px)'
+                }} />
+                <Container maxWidth="lg">
+                    <Card sx={{
+                        bgcolor: 'white',
+                        borderRadius: 4,
+                        overflow: 'hidden',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+                        border: '1px solid',
+                        borderColor: 'divider'
+                    }}>
+                        <Grid container>
+                            <Grid size={{ xs: 12, md: 7 }} sx={{ p: { xs: 4, md: 8 } }}>
+                                <Stack spacing={3}>
+                                    <Box sx={{
+                                        display: 'inline-flex',
+                                        p: 1.5,
+                                        bgcolor: 'primary.light',
+                                        color: 'primary.main',
+                                        borderRadius: 2,
+                                        width: 'fit-content'
+                                    }}>
+                                        <Calculator size={32} />
+                                    </Box>
+                                    <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
+                                        Calculate Your EMI in Seconds
+                                    </Typography>
+                                    <Typography variant="h6" color="text.secondary">
+                                        Planning your finances has never been easier. Use our smart EMI calculator to find the perfect loan structure for your needs.
+                                    </Typography>
+                                    <Box>
+                                        <Button
+                                            variant="contained"
+                                            size="large"
+                                            href="/emi-calculator"
+                                            endIcon={<ArrowRight />}
+                                            sx={{
+                                                px: 4,
+                                                py: 2,
+                                                borderRadius: 2,
+                                                fontSize: '1.1rem',
+                                                textTransform: 'none',
+                                                boxShadow: 4
+                                            }}
+                                        >
+                                            Try EMI Calculator
+                                        </Button>
+                                    </Box>
+                                </Stack>
+                            </Grid>
+                            <Grid size={{ xs: 12, md: 5 }} sx={{
+                                bgcolor: 'primary.main',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                p: 4,
+                                position: 'relative'
+                            }}>
+                                <Box sx={{
+                                    width: '100%',
+                                    height: '100%',
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%)',
+                                    zIndex: 1
+                                }} />
+                                <Stack spacing={2} alignItems="center" sx={{ color: 'white', textAlign: 'center', zIndex: 2 }}>
+                                    <Typography variant="h4" sx={{ fontWeight: 'bold' }}>8.5%</Typography>
+                                    <Typography variant="body1" sx={{ opacity: 0.8 }}>Starting Interest Rate</Typography>
+                                    <Box sx={{ width: '60%', height: 2, bgcolor: 'rgba(255,255,255,0.3)', my: 2 }} />
+                                    <Typography variant="h4" sx={{ fontWeight: 'bold' }}>₹835/mo</Typography>
+                                    <Typography variant="body1" sx={{ opacity: 0.8 }}>EMI per ₹1 Lakh</Typography>
+                                </Stack>
+                            </Grid>
+                        </Grid>
+                    </Card>
                 </Container>
             </Box>
 

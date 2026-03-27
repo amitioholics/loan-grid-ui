@@ -47,9 +47,9 @@ export function Header() {
                 Special Offers
               </Typography>
             </Link>
-            <Link href="#testimonials" style={{ textDecoration: 'none' }}>
+            <Link href="/emi-calculator" style={{ textDecoration: 'none' }}>
               <Typography variant="body2" color="text.secondary" sx={{ '&:hover': { color: 'text.primary' } }}>
-                Success Stories
+                EMI Calculator
               </Typography>
             </Link>
           </Stack>
